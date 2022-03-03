@@ -1,12 +1,32 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <div class="flex" id="navBar">
+      <nav>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/Film">Film</router-link>
+      </nav>
+      <RodSearch />
+    </div>
+    <router-view />
   </div>
 </template>
+
+
+<script>
+// @ is an alias to /src
+
+import RodSearch from "@/components/RodSearch.vue";
+
+export default {
+  name: "HomeView",
+  components: {
+    RodSearch,
+  },
+};
+</script>
+
+
+
 
 <style>
 #app {
@@ -16,7 +36,9 @@
   text-align: center;
   color: #2c3e50;
 }
-
+#navBar {
+  display: flex;
+}
 nav {
   padding: 30px;
 }
