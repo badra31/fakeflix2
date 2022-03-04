@@ -1,5 +1,15 @@
 <template>
-  <div class="film">
-    <h1>This is an about page {{ this.$route.params.id }}</h1>
+  <div>
+    <h1>film à voir</h1>
   </div>
 </template>
+
+
+<script>
+import { mapState } from "vuex";
+export default {
+  name: "FilmView",
+
+  computed: mapState(["films"]),
+};
+</script>

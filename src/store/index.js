@@ -9,6 +9,9 @@ export default new Vuex.Store({
   state: {
     videos: [],
     request: '',
+
+    fetch: 'https://api.themoviedb.org/3/',
+    key: 'key=34ea506b7db361019c0b6d3f0d76d3f6'
   },
 
   mutations: {
@@ -18,21 +21,25 @@ export default new Vuex.Store({
 
     setVideos: function (state, videos) {
       state.videos = videos
-    }
+    },
+
 
   },
 
   actions: {
     addSelect: function () {
-      console.log('ok')
+
       fetch(
-          `https://api.themoviedb.org/3/search/movie?api_key=34ea506b7db361019c0b6d3f0d76d3f6&query=${this.state.request}&language=fr-FR`
+          `${this.state.fetch}search/movie?api_${this.state.key}&query=${this.state.request}&language=fr-FR`
         )
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
           this.commit('setVideos', json.results);
         });
     },
+
+
   },
 
   getters: {

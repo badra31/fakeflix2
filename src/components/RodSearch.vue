@@ -2,13 +2,12 @@
 <template>
   <div>
     <div class="search">
-      <input
-        id="input"
-        value=""
-        type="text"
-        v-on:keyup.enter="getData()"
-        placeholder="Rechercher"
-      />
+      <input id="input" value="" type="text" />
+      <router-link to="/">
+        <button v-on:click="getData()" v-on:keyup.enter="getData()">
+          Rechercher
+        </button>
+      </router-link>
     </div>
   </div>
 </template>

@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    <ShowResults />
+  <div>
+    <div class="home">
+      <ShowResults />
+    </div>
   </div>
 </template>
 
@@ -16,3 +18,5 @@ export default {
   },
 };
 </script>
+
+

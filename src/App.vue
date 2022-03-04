@@ -1,9 +1,12 @@
 <template>
   <div id="app">
+    <h1>Fakeflix</h1>
     <div class="flex" id="navBar">
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/Film">Film</router-link>
+        <router-link to="/">Accueil</router-link> |
+        <router-link to="/favoris">Favoris</router-link> |
+        <router-link to="/film">Film</router-link> |
+        <router-link to="/view">Film à voir</router-link>
       </nav>
       <RodSearch />
     </div>
@@ -13,8 +16,6 @@
 
 
 <script>
-// @ is an alias to /src
-
 import RodSearch from "@/components/RodSearch.vue";
 
 export default {
@@ -29,15 +30,29 @@ export default {
 
 
 <style>
+body {
+  background-color: black;
+}
+
+h1 {
+  font-size: 100px;
+  color: red;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+
+  width: 1400px;
+  margin: 0 auto;
 }
 #navBar {
   display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  align-items: center;
 }
 nav {
   padding: 30px;
@@ -46,6 +61,7 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin: 10px;
 }
 
 nav a.router-link-exact-active {

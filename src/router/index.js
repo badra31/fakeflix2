@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Favoris from '../views/ShowFavoris.vue'
+import FilmView from '../views/FilmView.vue'
 
 Vue.use(VueRouter)
 
@@ -12,8 +14,19 @@ const routes = [{
   {
     path: '/film/:id',
     name: 'film',
-    component: () => import('../views/FilmView.vue')
-  }
+    component: () => import('../views/FilmInfo.vue')
+  },
+  {
+    path: '/favoris',
+    name: 'Favoris',
+    component: Favoris
+  },
+  {
+    path: '/view',
+    name: 'filmview',
+    component: FilmView
+  },
+
 ]
 
 const router = new VueRouter({
